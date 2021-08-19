@@ -17,9 +17,6 @@
             <table class="auto-style1">
                 <tr>
                     <td>
-                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Tìm kiếm" />
-                        <br />
                         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="MaNV" OnRowDeleting="GridView1_RowDeleting" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                             <Columns>
                                 <asp:BoundField DataField="MaNV" HeaderText="Mã nhân viên" />
@@ -34,6 +31,12 @@
                         </asp:GridView>
                     </td>
                     <td>
+                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Tìm kiếm" />
+                        </td>
+                </tr>
+                <tr>
+                    <td>
                         <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="MaCV" OnRowDeleting="GridView2_RowDeleting" OnSelectedIndexChanged="GridView2_SelectedIndexChanged">
                             <Columns>
                                 <asp:BoundField DataField="MaCV" HeaderText="Mã chức vụ" />
@@ -41,6 +44,20 @@
                                 <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" />
                             </Columns>
                         </asp:GridView>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Tìm kiếm" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:GridView ID="GridView3" runat="server">
+                        </asp:GridView>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Tìm kiếm" />
                     </td>
                 </tr>
             </table>
