@@ -38,6 +38,22 @@ namespace WCF
                 }
                  ).ToList();
         }
+        // xóa nhân viên
+        public bool XoaNhanvien(String MaNV)
+        {
+            NhanVien nv = new NhanVien();
+            nv = db.NhanViens.Single(x => x.MaNV == MaNV);
+            try
+            {
+                db.NhanViens.DeleteOnSubmit(nv);
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         // tìm kiếm nhân viên
         public List<TKNhanvien> TKNhanvien(string TenNV)
         {
@@ -73,6 +89,20 @@ namespace WCF
                 }
                  ).ToList();
         }
+        // tìm kiếm chức vụ
+        public List<TKChucvu> TKChucvu(string TenCV)
+        {
+            return (
+               
+                from a in db.ChucVus
+                where a.TenCV.Contains(TenCV)
+                select new TKChucvu
+                {
+                   MaCV = a.MaCV,
+                   TenCV = a.TenCV
+                }
+                 ).ToList();
+        }
         // xóa chức vụ
         public bool XoaChucvu(String MaCV)
         {
@@ -81,6 +111,48 @@ namespace WCF
             try
             {
                 db.ChucVus.DeleteOnSubmit(cv);
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        // hiển thị thông tin phòng ban
+        public List<HTPhongban> HTPhongban()
+        {
+            return (
+                from a in db.PhongBans
+                select new HTPhongban
+                {
+                    MaPB = a.MaPB,
+                    TenPB = a.TenPB
+                }
+                 ).ToList();
+        }
+        // tìm kiếm chức vụ
+        public List<TKPhongban> TKPhongban(string MaPB)
+        {
+            return (
+
+                from a in db.PhongBans
+                where a.TenPB.Contains(MaPB)
+                select new TKPhongban
+                {
+                  MaPB = a.MaPB,
+                  TenPB = a.TenPB
+                }
+                 ).ToList();
+        }
+        // xóa phòng ban
+        public bool XoaPhongBan(String MaPB)
+        {
+            PhongBan pb = new PhongBan();
+            pb = db.PhongBans.Single(x => x.MaPB == MaPB);
+            try
+            {
+                db.PhongBans.DeleteOnSubmit(pb);
                 db.SubmitChanges();
                 return true;
             }

@@ -27,6 +27,7 @@
                                 <asp:BoundField DataField="TenPB" HeaderText="Tên phòng ban" />
                                 <asp:BoundField DataField="TenCV" HeaderText="Chức vụ" />
                                 <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" />
+                                <asp:CommandField SelectText="Chọn" ShowSelectButton="True" />
                             </Columns>
                         </asp:GridView>
                     </td>
@@ -42,6 +43,7 @@
                                 <asp:BoundField DataField="MaCV" HeaderText="Mã chức vụ" />
                                 <asp:BoundField DataField="TenCV" HeaderText="Tên chức vụ" />
                                 <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" />
+                                <asp:CommandField SelectText="Chọn" ShowSelectButton="True" />
                             </Columns>
                         </asp:GridView>
                     </td>
@@ -52,7 +54,13 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:GridView ID="GridView3" runat="server">
+                        <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" DataKeyNames="MaPB" OnRowDeleting="GridView3_RowDeleting" OnSelectedIndexChanged="GridView3_SelectedIndexChanged">
+                            <Columns>
+                                <asp:BoundField DataField="MaPB" HeaderText="Mã phòng ban" />
+                                <asp:BoundField DataField="TenPB" HeaderText="Tên phòng ban" />
+                                <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" />
+                                <asp:CommandField SelectText="Chọn" ShowSelectButton="True" />
+                            </Columns>
                         </asp:GridView>
                     </td>
                     <td>

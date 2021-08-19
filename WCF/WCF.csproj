@@ -118,10 +118,13 @@
     </Compile>
     <Compile Include="HTChucVu.cs" />
     <Compile Include="HTNhanvien.cs" />
+    <Compile Include="HTPhongban.cs" />
     <Compile Include="ICode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="timkiem.cs" />
+    <Compile Include="TKChucvu.cs" />
     <Compile Include="TKNhanvien.cs" />
+    <Compile Include="TKPhongban.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data.dbml">
