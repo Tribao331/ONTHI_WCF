@@ -1,5 +1,9 @@
-﻿using System;
+﻿using Nest;
+using Rhino.Mocks.Constraints;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data.Linq.SqlClient;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -34,6 +38,29 @@ namespace WCF
                 }
                  ).ToList();
         }
+        // tìm kiếm nhân viên
+        public List<TKNhanvien> TKNhanvien(string TenNV)
+        {
+            return (
+                from a in db.NhanViens
+                from b in db.ChucVus
+                from c in db.PhongBans
+                where a.MaCV == b.MaCV
+                where a.MaPB == c.MaPB
+                where a.TenNV.Contains(TenNV)
+                select new TKNhanvien
+                {
+                    MaNV = a.MaNV,
+                    TenNV = a.TenNV,
+                    NgaySinh = a.NgaySinh,
+                    SDT = a.SDT,
+                    Luong = a.Luong,
+                    TenCV = b.TenCV,
+                    TenPB = c.TenPB
+
+                }
+                 ).ToList();
+        }      
         // hiển thị thông tin chức vụ
         public List<HTChucVu> HTChucVu()
         {

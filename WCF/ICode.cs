@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -14,6 +15,9 @@ namespace WCF
         //hiển thị nhân viên
         [OperationContract]
         List<HTNhanvien> HTNhanvien();
+        // tìm nhân viên
+        [OperationContract]
+        List<TKNhanvien> TKNhanvien(string TenNV);
         //hiển thị chức vụ
         [OperationContract]
         List<HTChucVu> HTChucVu();

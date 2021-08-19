@@ -53,5 +53,23 @@ namespace WCF
             }
             
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (TextBox1.Text == "")
+            {
+                Response.Write("<script> alert ('Vui lòng nhập thông tin vào khung tìm kiếm!');  window.location ='default.aspx'</script>");
+
+            }
+            else if (TextBox1.Text != "")
+            {
+                GridView1.DataSource = cd.TKNhanvien(TextBox1.Text);
+                GridView1.DataBind();
+            }
+            else
+            {
+                Response.Write("<script> alert ('Chương trình đang lỗi, vui lòng liên hệ chủ Website để khắc phục!');  window.location ='default.aspx'</script>");
+            }
+        }
     }
 }
