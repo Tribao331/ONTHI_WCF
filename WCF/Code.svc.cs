@@ -33,7 +33,9 @@ namespace WCF
                    SDT = a.SDT,
                    Luong = a.Luong,
                    TenCV = b.TenCV,
-                   TenPB = c.TenPB
+                   TenPB = c.TenPB,
+                   MaCV = a.MaCV,
+                   MaPB = a.MaPB
 
                 }
                  ).ToList();
@@ -85,6 +87,7 @@ namespace WCF
             nv.TenNV = TenNV;
             nv.NgaySinh = NgaySinh;
             nv.SDT = SDT;
+            nv.Luong = Luong;
             nv.MaPB = MaPB;
             nv.MaCV = MaCV;
             try
@@ -222,7 +225,7 @@ namespace WCF
                  ).ToList();
         }
         // xóa phòng ban
-        public bool XoaPhongBan(String MaPB)
+        public bool XoaPhongBan(string MaPB)
         {
             PhongBan pb = new PhongBan();
             pb = db.PhongBans.Single(x => x.MaPB == MaPB);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,6 +10,7 @@ namespace WCF
 {
     public partial class Default : System.Web.UI.Page
     {
+        DataClasses1DataContext db = new DataClasses1DataContext();       
         Code cd = new Code();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,7 +31,15 @@ namespace WCF
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+           
+            GridViewRow row = GridView1.SelectedRow;
+            this.txtma_nv.Text = HttpUtility.HtmlDecode(row.Cells[0].Text);
+            this.txt_tennv.Text = HttpUtility.HtmlDecode(row.Cells[3].Text);
+            this.txt_ngaysinh.Text = HttpUtility.HtmlDecode(row.Cells[4].Text);
+            this.txt_sdt.Text = HttpUtility.HtmlDecode(row.Cells[5].Text);
+            this.txt_luong.Text = HttpUtility.HtmlDecode(row.Cells[6].Text);
+            this.DropDownList_mapb.Text = HttpUtility.HtmlDecode(row.Cells[1].Text);
+            this.DropDownList_macv.Text = HttpUtility.HtmlDecode(row.Cells[2].Text);
         }
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -134,6 +144,60 @@ namespace WCF
             {
                 Response.Write("<script> alert ('Đã tồn tại liên kết !'); window.location ='default.aspx' </script>");
             }
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+       
+            if (txtma_nv.Text == "" )
+            {
+                Response.Write("<script> alert ('Vui lòng nhập mã nhân viên!'); </script>");
+                hienthi();
+            }          
+            else if (txt_tennv.Text == "")
+            {
+                Response.Write("<script> alert ('Vui lòng nhập tên nhân viên!'); </script>");
+                hienthi();
+            }
+            else if (txt_ngaysinh.Text == "")
+            {
+                Response.Write("<script> alert ('Vui lòng nhập ngày sinh nhân viên!'); </script>");
+                hienthi();
+            }
+            else if (txt_sdt.Text == "")
+            {
+                Response.Write("<script> alert ('Vui lòng nhập số điện thoại nhân viên!'); </script>");
+                hienthi();
+            }
+            else if (txt_luong.Text == "")
+            {
+                Response.Write("<script> alert ('Vui lòng nhập lương nhân viên!'); </script>");
+                hienthi();
+            }
+            else if (DropDownList_macv.Text == "0")
+            {
+                Response.Write("<script> alert ('Vui lòng chọn phòng ban!'); </script>");
+                hienthi();
+            }
+            else if (DropDownList_macv.Text == "0")
+            {
+                Response.Write("<script> alert ('Vui lòng chọn chức vụ!'); </script>");
+                hienthi();
+            }
+            else if (cd.Themnhanvien(txtma_nv.Text, txt_tennv.Text, DateTime.Parse(txt_ngaysinh.Text), txt_sdt.Text, float.Parse(txt_luong.Text), DropDownList_mapb.Text, DropDownList_macv.Text))
+            {
+                Response.Write("<script> alert ('Thêm hàng thành công!'); window.location ='default.aspx' </script>");
+            }
+            else 
+            {
+                Response.Write("<script> alert ('Mã đã tồn tại!'); </script>");
+                hienthi();
+            }
+        }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

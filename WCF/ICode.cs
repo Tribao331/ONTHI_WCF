@@ -27,7 +27,7 @@ namespace WCF
         bool Themnhanvien(string MaNV, string TenNV, DateTime NgaySinh, string SDT, float Luong, string MaPB, string MaCV);
         //sửa nhân viên
         [OperationContract]
-        bool Sửanhanvien(string MaNV, string TenNV, DateTime NgaySinh, string SDT, float Luong, string MaPB, string MaCV);
+        bool Suanhanvien(string MaNV, string TenNV, DateTime NgaySinh, string SDT, float Luong, string MaPB, string MaCV);
 
         // Code chức vụ
         //hiển thị chức vụ
@@ -38,7 +38,7 @@ namespace WCF
         List<TKChucvu> TKChucvu(string TenCV);
         // xóa chức vụ
         [OperationContract]
-        bool XoaChucvu(String MaCV);
+        bool XoaChucvu(string MaCV);
         // thêm chức vụ
         [OperationContract]
         bool Themchucvu(string MaCV, string TenCV);
