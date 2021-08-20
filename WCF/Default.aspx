@@ -58,9 +58,9 @@
                                 <br />
                         <asp:TextBox ID="txt_tennv"  placeholder="Nhập tên" runat="server"></asp:TextBox>
                                 <br />
-                        <asp:TextBox ID="txt_ngaysinh"  placeholder="Nhập ngày sinh" runat="server" Width="160px" AutoPostBack="True"></asp:TextBox>
+                        <asp:TextBox ID="txt_ngaysinh" placeholder="Nhập ngày sinh" runat="server" TextMode="DateTime"></asp:TextBox>
                                 <br />
-                        <asp:TextBox ID="txt_sdt" placeholder="Nhập số điện thoại" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_sdt" pattern="0([0-9]{9}||[0-9]{10})" title="Số điện thoại có định dạng 0123456789 hoặc 02943853733" placeholder="Nhập số điện thoại" runat="server"></asp:TextBox>
                                 <br />
                         <asp:TextBox ID="txt_luong" placeholder="Nhập lương" runat="server"></asp:TextBox>
                                 <br />
@@ -126,7 +126,7 @@
                                 <br />
                         <asp:TextBox ID="txt_tenpb" placeholder="Nhập tên" runat="server"></asp:TextBox>
                                 <br />
-                        <asp:Button ID="Button8" runat="server" Text="Thêm phòng ban" />
+                        <asp:Button ID="Button8" runat="server" Text="Thêm phòng ban" OnClick="Button8_Click" />
                                 <asp:Button ID="Button9" runat="server" Text="Sửa phòng ban" />
                         <hr />
                     </td>

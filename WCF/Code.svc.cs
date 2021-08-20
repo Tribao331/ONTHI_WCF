@@ -265,8 +265,7 @@ namespace WCF
             pb.MaPB = MaPB;
             pb.TenPB = TenPB;
             try
-            {
-                db.PhongBans.InsertOnSubmit(pb);
+            {               
                 db.SubmitChanges();
                 return true;
             }

@@ -159,7 +159,7 @@ namespace WCF
                 Response.Write("<script> alert ('Vui lòng nhập tên nhân viên!'); </script>");
                 hienthi();
             }
-            else if (txt_ngaysinh.Text == "")
+            else if (txt_ngaysinh.Text != "")
             {
                 Response.Write("<script> alert ('Vui lòng nhập ngày sinh nhân viên!'); </script>");
                 hienthi();
@@ -179,17 +179,18 @@ namespace WCF
                 Response.Write("<script> alert ('Vui lòng chọn phòng ban!'); </script>");
                 hienthi();
             }
-            else if (DropDownList_macv.Text == "0")
+            else if (DropDownList_macv.Text == "")
             {
                 Response.Write("<script> alert ('Vui lòng chọn chức vụ!'); </script>");
                 hienthi();
             }
             else if (cd.Themnhanvien(txtma_nv.Text, txt_tennv.Text, DateTime.Parse(txt_ngaysinh.Text), txt_sdt.Text, float.Parse(txt_luong.Text), DropDownList_mapb.Text, DropDownList_macv.Text))
             {
-                Response.Write("<script> alert ('Thêm hàng thành công!'); window.location ='default.aspx' </script>");
+                Response.Write("<script> alert ('Thêm nhân viên thành công!'); window.location ='default.aspx' </script>");
             }
             else 
             {
+               
                 Response.Write("<script> alert ('Mã đã tồn tại!'); </script>");
                 hienthi();
             }
@@ -198,6 +199,11 @@ namespace WCF
         protected void Button6_Click(object sender, EventArgs e)
         {
             
+        }
+
+        protected void Button8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
