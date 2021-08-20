@@ -76,7 +76,49 @@ namespace WCF
 
                 }
                  ).ToList();
-        }      
+        }
+        // thêm nhân viên
+        public bool Themnhanvien(string MaNV, string TenNV, DateTime NgaySinh, string SDT, float Luong, string MaPB, string MaCV)
+        {
+            NhanVien nv = new NhanVien();
+            nv.MaNV = MaNV;
+            nv.TenNV = TenNV;
+            nv.NgaySinh = NgaySinh;
+            nv.SDT = SDT;
+            nv.MaPB = MaPB;
+            nv.MaCV = MaCV;
+            try
+            {
+                db.NhanViens.InsertOnSubmit(nv);
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        // Sửa nhân viên
+        public bool Suanhanvien(string MaNV, string TenNV, DateTime NgaySinh, string SDT, float Luong, string MaPB, string MaCV)
+        {
+            NhanVien nv = new NhanVien();
+            nv = db.NhanViens.Single(x => x.MaNV == MaNV);
+            nv.MaNV = MaNV;
+            nv.TenNV = TenNV;
+            nv.NgaySinh = NgaySinh;
+            nv.SDT = SDT;
+            nv.MaPB = MaPB;
+            nv.MaCV = MaCV;
+            try
+            {             
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         // hiển thị thông tin chức vụ
         public List<HTChucVu> HTChucVu()
         {
@@ -119,6 +161,40 @@ namespace WCF
                 return false;
             }
         }
+        // thêm chức vụ
+        public bool Themchucvu(string MaCV, string TenCV)
+        {
+            ChucVu cv = new ChucVu();
+            cv.MaCV = MaCV;
+            cv.TenCV = TenCV;
+            try
+            {
+                db.ChucVus.InsertOnSubmit(cv);
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        // sửa chức vụ
+        public bool Suachucvu(string MaCV, string TenCV)
+        {
+            ChucVu cv = new ChucVu();
+            cv = db.ChucVus.Single(x => x.MaCV == MaCV);
+            cv.MaCV = MaCV;
+            cv.TenCV = TenCV;
+            try
+            {               
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         // hiển thị thông tin phòng ban
         public List<HTPhongban> HTPhongban()
         {
@@ -153,6 +229,41 @@ namespace WCF
             try
             {
                 db.PhongBans.DeleteOnSubmit(pb);
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        // thêm phòng ban
+        public bool Themphongban(string MaPB, string TenPB)
+        {
+            PhongBan pb = new PhongBan();
+            pb.MaPB = MaPB;
+            pb.TenPB = TenPB;
+            try
+            {
+                db.PhongBans.InsertOnSubmit(pb);
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        // sửa phòng ban
+        public bool Suaphongban(string MaPB, string TenPB)
+        {
+            PhongBan pb = new PhongBan();
+            pb = db.PhongBans.Single(x => x.MaPB == MaPB);
+            pb.MaPB = MaPB;
+            pb.TenPB = TenPB;
+            try
+            {
+                db.PhongBans.InsertOnSubmit(pb);
                 db.SubmitChanges();
                 return true;
             }

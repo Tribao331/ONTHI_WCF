@@ -22,6 +22,12 @@ namespace WCF
         // xóa nhân viên
         [OperationContract]
         bool XoaNhanvien(String MaNV);
+        //thêm nhân viên
+        [OperationContract]
+        bool Themnhanvien(string MaNV, string TenNV, DateTime NgaySinh, string SDT, float Luong, string MaPB, string MaCV);
+        //sửa nhân viên
+        [OperationContract]
+        bool Sửanhanvien(string MaNV, string TenNV, DateTime NgaySinh, string SDT, float Luong, string MaPB, string MaCV);
 
         // Code chức vụ
         //hiển thị chức vụ
@@ -33,6 +39,12 @@ namespace WCF
         // xóa chức vụ
         [OperationContract]
         bool XoaChucvu(String MaCV);
+        // thêm chức vụ
+        [OperationContract]
+        bool Themchucvu(string MaCV, string TenCV);
+        // thêm chức vụ
+        [OperationContract]
+        bool Suachucvu(string MaCV, string TenCV);
 
         // Code phòng ban
         //hiển thị phòng ban
@@ -44,5 +56,11 @@ namespace WCF
         // xóa phòng ban
         [OperationContract]
         bool XoaPhongBan(String MaPB);
+        // thêm phòng ban
+        [OperationContract]
+        bool Themphongban(string MaPB, string TenPB);
+        // sửa phòng ban
+        [OperationContract]
+        bool Suaphongban(string MaPB, string TenPB);
     }
 }
