@@ -166,7 +166,7 @@ namespace WCF
                 Response.Write("<script> alert ('Vui lòng nhập tên nhân viên!'); </script>");
                 hienthi();
             }
-            else if (txt_ngaysinh.Text != "")
+            else if (txt_ngaysinh.Text == "")
             {
                 Response.Write("<script> alert ('Vui lòng nhập ngày sinh nhân viên!'); </script>");
                 hienthi();
@@ -247,6 +247,103 @@ namespace WCF
             {
 
                 Response.Write("<script> alert ('Mã phòng ban đã tồn tại!'); </script>");
+                hienthi();
+            }
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            if (lb_manv.Text == "")
+            {
+                Response.Write("<script> alert ('Vui lòng chọn nhân viên muốn sửa!'); </script>");
+                hienthi();
+            }
+            else if (txt_tennv.Text == "")
+            {
+                Response.Write("<script> alert ('Vui lòng nhập tên nhân viên!'); </script>");
+                hienthi();
+            }
+            else if (txt_ngaysinh.Text == "")
+            {
+                Response.Write("<script> alert ('Vui lòng nhập ngày sinh nhân viên!'); </script>");
+                hienthi();
+            }
+            else if (txt_sdt.Text == "")
+            {
+                Response.Write("<script> alert ('Vui lòng nhập số điện thoại nhân viên!'); </script>");
+                hienthi();
+            }
+            else if (txt_luong.Text == "")
+            {
+                Response.Write("<script> alert ('Vui lòng nhập lương nhân viên!'); </script>");
+                hienthi();
+            }
+            else if (DropDownList_macv.Text == "0")
+            {
+                Response.Write("<script> alert ('Vui lòng chọn phòng ban!'); </script>");
+                hienthi();
+            }
+            else if (DropDownList_macv.Text == "")
+            {
+                Response.Write("<script> alert ('Vui lòng chọn chức vụ!'); </script>");
+                hienthi();
+            }
+            else if (cd.Suanhanvien(lb_manv.Text, txt_tennv.Text, DateTime.Parse(txt_ngaysinh.Text), txt_sdt.Text, float.Parse(txt_luong.Text), DropDownList_mapb.Text, DropDownList_macv.Text))
+            {
+                Response.Write("<script> alert ('Sửa nhân viên thành công!'); window.location ='default.aspx' </script>");
+            }
+            else
+            {
+
+                Response.Write("<script> alert ('Xuất hiện lỗi rồi!'); </script>");
+                hienthi();
+            }
+        }
+
+        protected void Button7_Click(object sender, EventArgs e)
+        {
+            if (txt_macv.Text == "")
+            {
+                Response.Write("<script> alert ('Vui lòng chọn chức vụ muốn sửa!'); </script>");
+                hienthi();
+            }
+            else if (txt_tencv.Text == "")
+            {
+                Response.Write("<script> alert ('Vui lòng nhập tên chức vụ!'); </script>");
+                hienthi();
+            }
+            else if (cd.Suachucvu(txt_macv.Text, txt_tencv.Text))
+            {
+                Response.Write("<script> alert ('Sửa chức vụ thành công!'); window.location ='default.aspx' </script>");
+            }
+            else
+            {
+
+                Response.Write("<script> alert ('Xuất hiện lỗi rồi!'); </script>");
+                hienthi();
+            }
+        }
+
+        protected void Button9_Click(object sender, EventArgs e)
+        {
+            if (txt_mapb.Text == "")
+            {
+                Response.Write("<script> alert ('Vui lòng chọn phòng ban muốn sửa!'); </script>");
+                hienthi();
+            }
+            else if (txt_tenpb.Text == "")
+            {
+                Response.Write("<script> alert ('Vui lòng nhập tên phòng ban!'); </script>");
+                hienthi();
+            }
+            else if (cd.Suaphongban(txt_mapb.Text, txt_tenpb.Text))
+            {
+                Response.Write("<script> alert ('Sửa phòng ban thành công!'); window.location ='default.aspx' </script>");
+            }
+            else
+            {
+
+                Response.Write("<script> alert ('Xuất hiện lỗi rồi!'); </script>");
                 hienthi();
             }
         }

@@ -74,7 +74,9 @@ namespace WCF
                     SDT = a.SDT,
                     Luong = a.Luong,
                     TenCV = b.TenCV,
-                    TenPB = c.TenPB
+                    TenPB = c.TenPB,
+                    MaCV = a.MaCV,
+                    MaPB = a.MaPB
 
                 }
                  ).ToList();

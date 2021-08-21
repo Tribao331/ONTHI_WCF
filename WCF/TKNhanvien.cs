@@ -11,5 +11,7 @@ namespace WCF
         public double? Luong { get; internal set; }
         public string TenCV { get; internal set; }
         public string TenPB { get; internal set; }
+        public string MaCV { get; internal set; }
+        public string MaPB { get; internal set; }
     }
 }

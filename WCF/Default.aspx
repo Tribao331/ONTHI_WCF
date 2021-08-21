@@ -77,7 +77,7 @@
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QLNVConnectionString %>" SelectCommand="SELECT * FROM [PhongBan]"></asp:SqlDataSource>
                                 <br />
                         <asp:Button ID="Button4" runat="server" Text="Thêm nhân viên" OnClick="Button4_Click" />
-                                <asp:Button ID="Button5" runat="server" Text="Sửa nhân viên" />                        
+                                <asp:Button ID="Button5" runat="server" Text="Sửa nhân viên" OnClick="Button5_Click" />                        
                         <hr />
                         </td>
                 </tr>
@@ -107,7 +107,7 @@
                         <asp:TextBox ID="txt_tencv" placeholder="Nhập tên" runat="server"></asp:TextBox>
                                 <br />
                         <asp:Button ID="Button6" runat="server" Text="Thêm chức vụ" OnClick="Button6_Click" />
-                                <asp:Button ID="Button7" runat="server" Text="Sửa chức vụ" />&nbsp;<hr />
+                                <asp:Button ID="Button7" runat="server" Text="Sửa chức vụ" OnClick="Button7_Click" />&nbsp;<hr />
                     </td>
                 </tr>                
                 <tr>
@@ -133,7 +133,7 @@
                         <asp:TextBox ID="txt_tenpb" placeholder="Nhập tên" runat="server"></asp:TextBox>
                                 <br />
                         <asp:Button ID="Button8" runat="server" Text="Thêm phòng ban" OnClick="Button8_Click" />
-                                <asp:Button ID="Button9" runat="server" Text="Sửa phòng ban" />
+                                <asp:Button ID="Button9" runat="server" Text="Sửa phòng ban" OnClick="Button9_Click" />
                         <hr />
                     </td>
                 </tr>
