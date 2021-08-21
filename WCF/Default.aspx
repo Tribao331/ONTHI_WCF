@@ -50,7 +50,7 @@
                         </div>                     
                     </td>                 
                     <td class="auto-style5">
-                        <asp:DropDownList ID="DropDownList_tim" runat="server">
+                        <asp:DropDownList ID="DropDownList_timnv" runat="server">
                             <asp:ListItem Value="0">Tìm theo mã</asp:ListItem>
                             <asp:ListItem Value="1">Tìm theo tên</asp:ListItem>
                         </asp:DropDownList>

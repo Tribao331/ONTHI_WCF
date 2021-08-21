@@ -33,13 +33,13 @@ namespace WCF
         protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
-        /// DropDownList_tim control.
+        /// DropDownList_timnv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList_tim;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_timnv;
 
         /// <summary>
         /// TextBox1 control.

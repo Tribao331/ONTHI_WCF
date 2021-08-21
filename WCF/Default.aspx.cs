@@ -85,16 +85,16 @@ namespace WCF
                 Response.Write("<script> alert ('Vui lòng nhập thông tin vào khung tìm kiếm!');  window.location ='default.aspx'</script>");
 
             }
-            else if (DropDownList_tim.Text == "")
+            else if (DropDownList_timnv.Text == "")
             {
                 Response.Write("<script> alert ('Vui lòng chọn phương thức tìm kiếm!');  window.location ='default.aspx'</script>");
             }
-            else if (DropDownList_tim.Text == "0")
+            else if (DropDownList_timnv.Text == "0")
             {
                 GridView1.DataSource = cd.TKNhanvienMA(TextBox1.Text);
                 GridView1.DataBind();
             }
-            else if (DropDownList_tim.Text == "1")
+            else if (DropDownList_timnv.Text == "1")
             {
                 GridView1.DataSource = cd.TKNhanvien(TextBox1.Text);
                 GridView1.DataBind();
