@@ -81,6 +81,31 @@ namespace WCF
                 }
                  ).ToList();
         }
+        // tìm kiếm nhân viên theo mã
+        public List<TKNhanvienMA> TKNhanvienMA(string MaNV)
+        {
+            return (
+                from a in db.NhanViens
+                from b in db.ChucVus
+                from c in db.PhongBans
+                where a.MaCV == b.MaCV
+                where a.MaPB == c.MaPB
+                where a.MaNV.Contains(MaNV)
+                select new TKNhanvienMA
+                {
+                    MaNV = a.MaNV,
+                    TenNV = a.TenNV,
+                    NgaySinh = a.NgaySinh,
+                    SDT = a.SDT,
+                    Luong = a.Luong,
+                    TenCV = b.TenCV,
+                    TenPB = c.TenPB,
+                    MaCV = a.MaCV,
+                    MaPB = a.MaPB
+
+                }
+                 ).ToList();
+        }
         // thêm nhân viên
         public bool Themnhanvien(string MaNV, string TenNV, DateTime NgaySinh, string SDT, float Luong, string MaPB, string MaCV)
         {

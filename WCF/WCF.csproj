@@ -124,6 +124,7 @@
     <Compile Include="timkiem.cs" />
     <Compile Include="TKChucvu.cs" />
     <Compile Include="TKNhanvien.cs" />
+    <Compile Include="TKNhanvienMA.cs" />
     <Compile Include="TKPhongban.cs" />
   </ItemGroup>
   <ItemGroup>

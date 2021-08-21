@@ -19,6 +19,9 @@ namespace WCF
         // tìm nhân viên
         [OperationContract]
         List<TKNhanvien> TKNhanvien(string TenNV);
+        // tìm nhân viên theo mã
+        [OperationContract]
+        List<TKNhanvienMA> TKNhanvienMA(string MaNV);
         // xóa nhân viên
         [OperationContract]
         bool XoaNhanvien(String MaNV);

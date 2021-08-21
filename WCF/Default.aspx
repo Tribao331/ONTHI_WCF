@@ -50,6 +50,10 @@
                         </div>                     
                     </td>                 
                     <td class="auto-style5">
+                        <asp:DropDownList ID="DropDownList_tim" runat="server">
+                            <asp:ListItem Value="0">Tìm theo mã</asp:ListItem>
+                            <asp:ListItem Value="1">Tìm theo tên</asp:ListItem>
+                        </asp:DropDownList>
                         <asp:TextBox ID="TextBox1"  placeholder="Nhập thông tin tìm kiếm" runat="server"></asp:TextBox>
                         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Tìm kiếm" />
                                 <br />
