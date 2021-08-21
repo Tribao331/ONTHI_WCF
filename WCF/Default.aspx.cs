@@ -68,7 +68,7 @@ namespace WCF
         { string a = GridView2.DataKeys[e.RowIndex].Values["MaCV"].ToString();
             if (cd.XoaChucvu(a))
             {                 
-                Response.Write("<script> alert ('Đã xóa loại !'); window.location ='default.aspx' </script>");
+                Response.Write("<script> alert ('Đã xóa chức vụ !'); window.location ='default.aspx' </script>");
             }
             else
             {
