@@ -99,6 +99,36 @@ namespace WCF
                 GridView1.DataSource = cd.TKNhanvien(TextBox1.Text);
                 GridView1.DataBind();
             }
+            else if (DropDownList_timnv.Text == "2")
+            {
+                GridView1.DataSource = cd.TKNhanvienMACV(TextBox1.Text);
+                GridView1.DataBind();
+            }
+            else if (DropDownList_timnv.Text == "3")
+            {
+                GridView1.DataSource = cd.TKNhanvienCV(TextBox1.Text);
+                GridView1.DataBind();
+            }
+            else if (DropDownList_timnv.Text == "4")
+            {
+                GridView1.DataSource = cd.TKNhanvienMAPB(TextBox1.Text);
+                GridView1.DataBind();
+            }
+            else if (DropDownList_timnv.Text == "5")
+            {
+                GridView1.DataSource = cd.TKNhanvienPB(TextBox1.Text);
+                GridView1.DataBind();
+            }
+            else if (DropDownList_timnv.Text == "6")
+            {
+                GridView1.DataSource = cd.TKNhanvienSDT(TextBox1.Text);
+                GridView1.DataBind();
+            }
+            else if (DropDownList_timnv.Text == "7")
+            {
+                GridView1.DataSource = cd.TKNhanvienLUONG(float.Parse(TextBox1.Text));
+                GridView1.DataBind();
+            }
             else
             {
                 Response.Write("<script> alert ('Chương trình đang lỗi, vui lòng liên hệ chủ Website để khắc phục!');  window.location ='default.aspx'</script>");
@@ -112,7 +142,12 @@ namespace WCF
                 Response.Write("<script> alert ('Vui lòng nhập thông tin vào khung tìm kiếm!');  window.location ='default.aspx'</script>");
 
             }
-            else if (TextBox2.Text != "")
+            else if (DropDownList_timcv.Text =="0")
+            {
+                GridView2.DataSource = cd.TKChucvuMA(TextBox2.Text);
+                GridView2.DataBind();
+            }
+            else if (DropDownList_timcv.Text == "1")
             {
                 GridView2.DataSource = cd.TKChucvu(TextBox2.Text);
                 GridView2.DataBind();
@@ -130,7 +165,12 @@ namespace WCF
                 Response.Write("<script> alert ('Vui lòng nhập thông tin vào khung tìm kiếm!');  window.location ='default.aspx'</script>");
 
             }
-            else if (TextBox3.Text != "")
+            else if (DropDownList_timpb.Text == "0")
+            {
+                GridView3.DataSource = cd.TKPhongbanMA(TextBox3.Text);
+                GridView3.DataBind();
+            }
+            else if (DropDownList_timpb.Text == "1")
             {
                 GridView3.DataSource = cd.TKPhongban(TextBox3.Text);
                 GridView3.DataBind();
@@ -355,6 +395,11 @@ namespace WCF
                 Response.Write("<script> alert ('Xuất hiện lỗi rồi!'); </script>");
                 hienthi();
             }
+        }
+
+        protected void Button10_Click(object sender, EventArgs e)
+        {
+            Response.Write("<script> window.location ='http://tribao.somee.com/' </script>");
         }
     }
 }

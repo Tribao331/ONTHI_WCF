@@ -106,6 +106,156 @@ namespace WCF
                 }
                  ).ToList();
         }
+        // tìm kiếm nhân viên theo mã chức vụ
+        public List<TKNhanvienMACV> TKNhanvienMACV(string MaCV)
+        {
+            return (
+                from a in db.NhanViens
+                from b in db.ChucVus
+                from c in db.PhongBans
+                where a.MaCV == b.MaCV
+                where a.MaPB == c.MaPB
+                where a.MaCV.Contains(MaCV)
+                select new TKNhanvienMACV
+                {
+                    MaNV = a.MaNV,
+                    TenNV = a.TenNV,
+                    NgaySinh = a.NgaySinh,
+                    SDT = a.SDT,
+                    Luong = a.Luong,
+                    TenCV = b.TenCV,
+                    TenPB = c.TenPB,
+                    MaCV = a.MaCV,
+                    MaPB = a.MaPB
+
+                }
+                 ).ToList();
+        }
+        // tìm kiếm nhân viên theo tên chức vụ
+        public List<TKNhanvienCV> TKNhanvienCV(string TenCV)
+        {
+            return (
+                from a in db.NhanViens
+                from b in db.ChucVus
+                from c in db.PhongBans
+                where a.MaCV == b.MaCV
+                where a.MaPB == c.MaPB
+                where b.TenCV.Contains(TenCV)
+                select new TKNhanvienCV
+                {
+                    MaNV = a.MaNV,
+                    TenNV = a.TenNV,
+                    NgaySinh = a.NgaySinh,
+                    SDT = a.SDT,
+                    Luong = a.Luong,
+                    TenCV = b.TenCV,
+                    TenPB = c.TenPB,
+                    MaCV = a.MaCV,
+                    MaPB = a.MaPB
+
+                }
+                 ).ToList();
+        }
+        // tìm kiếm nhân viên theo mã phòng
+        public List<TKNhanvienMAPB> TKNhanvienMAPB(string MaPB)
+        {
+            return (
+                from a in db.NhanViens
+                from b in db.ChucVus
+                from c in db.PhongBans
+                where a.MaCV == b.MaCV
+                where a.MaPB == c.MaPB
+                where a.MaPB.Contains(MaPB)
+                select new TKNhanvienMAPB
+                {
+                    MaNV = a.MaNV,
+                    TenNV = a.TenNV,
+                    NgaySinh = a.NgaySinh,
+                    SDT = a.SDT,
+                    Luong = a.Luong,
+                    TenCV = b.TenCV,
+                    TenPB = c.TenPB,
+                    MaCV = a.MaCV,
+                    MaPB = a.MaPB
+
+                }
+                 ).ToList();
+        }
+        // tìm kiếm nhân viên theo tên phòng
+        public List<TKNhanvienPB> TKNhanvienPB(string TenPB)
+        {
+            return (
+                from a in db.NhanViens
+                from b in db.ChucVus
+                from c in db.PhongBans
+                where a.MaCV == b.MaCV
+                where a.MaPB == c.MaPB
+                where c.TenPB.Contains(TenPB)
+                select new TKNhanvienPB
+                {
+                    MaNV = a.MaNV,
+                    TenNV = a.TenNV,
+                    NgaySinh = a.NgaySinh,
+                    SDT = a.SDT,
+                    Luong = a.Luong,
+                    TenCV = b.TenCV,
+                    TenPB = c.TenPB,
+                    MaCV = a.MaCV,
+                    MaPB = a.MaPB
+
+                }
+                 ).ToList();
+        }
+        // tìm kiếm nhân viên theo số điện thoại
+        public List<TKNhanvienSDT> TKNhanvienSDT(string SDT)
+        {
+            return (
+                from a in db.NhanViens
+                from b in db.ChucVus
+                from c in db.PhongBans
+                where a.MaCV == b.MaCV
+                where a.MaPB == c.MaPB
+                where a.SDT.Contains(SDT)
+                select new TKNhanvienSDT
+                {
+                    MaNV = a.MaNV,
+                    TenNV = a.TenNV,
+                    NgaySinh = a.NgaySinh,
+                    SDT = a.SDT,
+                    Luong = a.Luong,
+                    TenCV = b.TenCV,
+                    TenPB = c.TenPB,
+                    MaCV = a.MaCV,
+                    MaPB = a.MaPB
+
+                }
+                 ).ToList();
+        }
+        // tìm kiếm nhân viên theo số lương
+        public List<TKNhanvienLUONG> TKNhanvienLUONG(float Luong)
+        {
+            return (
+                from a in db.NhanViens
+                from b in db.ChucVus
+                from c in db.PhongBans
+                where a.MaCV == b.MaCV
+                where a.MaPB == c.MaPB
+                where a.Luong == Luong
+                select new TKNhanvienLUONG
+                {
+                    MaNV = a.MaNV,
+                    TenNV = a.TenNV,
+                    NgaySinh = a.NgaySinh,
+                    SDT = a.SDT,
+                    Luong = a.Luong,
+                    TenCV = b.TenCV,
+                    TenPB = c.TenPB,
+                    MaCV = a.MaCV,
+                    MaPB = a.MaPB
+
+                }
+                 ).ToList();
+        }
         // thêm nhân viên
         public bool Themnhanvien(string MaNV, string TenNV, DateTime NgaySinh, string SDT, float Luong, string MaPB, string MaCV)
         {
@@ -175,6 +325,20 @@ namespace WCF
                 }
                  ).ToList();
         }
+        // tìm kiếm chức vụ theo mã
+        public List<TKChucvuMA> TKChucvuMA(string MaCV)
+        {
+            return (
+
+                from a in db.ChucVus
+                where a.MaCV.Contains(MaCV)
+                select new TKChucvuMA
+                {
+                    MaCV = a.MaCV,
+                    TenCV = a.TenCV
+                }
+                 ).ToList();
+        }
         // xóa chức vụ
         public bool XoaChucvu(String MaCV)
         {
@@ -237,17 +401,31 @@ namespace WCF
                 }
                  ).ToList();
         }
-        // tìm kiếm chức vụ
-        public List<TKPhongban> TKPhongban(string MaPB)
+        // tìm kiếm phòng ban
+        public List<TKPhongban> TKPhongban(string TenPB)
         {
             return (
 
                 from a in db.PhongBans
-                where a.TenPB.Contains(MaPB)
+                where a.TenPB.Contains(TenPB)
                 select new TKPhongban
                 {
                   MaPB = a.MaPB,
                   TenPB = a.TenPB
+                }
+                 ).ToList();
+        }
+        // tìm kiếm phòng ban theo mã
+        public List<TKPhongbanMA> TKPhongbanMA(string MaPB)
+        {
+            return (
+
+                from a in db.PhongBans
+                where a.MaPB.Contains(MaPB)
+                select new TKPhongbanMA
+                {
+                    MaPB = a.MaPB,
+                    TenPB = a.TenPB
                 }
                  ).ToList();
         }

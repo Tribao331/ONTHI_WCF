@@ -123,9 +123,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="timkiem.cs" />
     <Compile Include="TKChucvu.cs" />
+    <Compile Include="TKChucvuMA.cs" />
     <Compile Include="TKNhanvien.cs" />
+    <Compile Include="TKNhanvienCV.cs" />
+    <Compile Include="TKNhanvienLUONG.cs" />
     <Compile Include="TKNhanvienMA.cs" />
+    <Compile Include="TKNhanvienMACV.cs" />
+    <Compile Include="TKNhanvienMAPB.cs" />
+    <Compile Include="TKNhanvienPB.cs" />
+    <Compile Include="TKNhanvienSDT.cs" />
     <Compile Include="TKPhongban.cs" />
+    <Compile Include="TKPhongbanMA.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data.dbml">

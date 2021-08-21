@@ -22,15 +22,20 @@
             width: 421px;
             height: 372px;
         }
+        .auto-style6 {
+            text-align: left;
+        }
         </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Button ID="Button10" runat="server" OnClick="Button10_Click" Text="Xem code" />
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style4">
-                        <div class="auto-style2">
+                        <div class="auto-style6">
+                            <br />
                         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="MaNV" OnRowDeleting="GridView1_RowDeleting" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                             <Columns>
                                 <asp:BoundField DataField="MaNV" HeaderText="Mã nhân viên" />
@@ -51,8 +56,14 @@
                     </td>                 
                     <td class="auto-style5">
                         <asp:DropDownList ID="DropDownList_timnv" runat="server">
-                            <asp:ListItem Value="0">Tìm theo mã</asp:ListItem>
-                            <asp:ListItem Value="1">Tìm theo tên</asp:ListItem>
+                            <asp:ListItem Value="0">Tìm mã nhân viên</asp:ListItem>
+                            <asp:ListItem Value="1">Tìm tên nhân viên</asp:ListItem>
+                            <asp:ListItem Value="2">Tìm mã chức vụ</asp:ListItem>
+                            <asp:ListItem Value="3">Tìm tên chức vụ</asp:ListItem>
+                            <asp:ListItem Value="4">Tìm mã phòng ban</asp:ListItem>
+                            <asp:ListItem Value="5">Tìm tên phòng ban</asp:ListItem>
+                            <asp:ListItem Value="6">Tìm số điện thoại</asp:ListItem>
+                            <asp:ListItem Value="7">Tìm theo mức lương</asp:ListItem>
                         </asp:DropDownList>
                         <asp:TextBox ID="TextBox1"  placeholder="Nhập thông tin tìm kiếm" runat="server"></asp:TextBox>
                         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Tìm kiếm" />
@@ -101,6 +112,10 @@
                         <br />
                     </td>
                     <td class="auto-style3">
+                        <asp:DropDownList ID="DropDownList_timcv" runat="server">
+                            <asp:ListItem Value="0">Tìm mã chức vụ</asp:ListItem>
+                            <asp:ListItem Value="1">Tìm tên chức vụ</asp:ListItem>
+                        </asp:DropDownList>
                         <asp:TextBox ID="TextBox2" placeholder="Nhập thông tin tìm kiếm" runat="server"></asp:TextBox>
                         <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Tìm kiếm" />
                                 <br />
@@ -127,6 +142,10 @@
                         </asp:GridView>
                     </td>                   
                     <td class="auto-style3">
+                        <asp:DropDownList ID="DropDownList_timpb" runat="server">
+                            <asp:ListItem Value="0">Tìm mã phòng</asp:ListItem>
+                            <asp:ListItem Value="1">Tìm tên phòng</asp:ListItem>
+                        </asp:DropDownList>
                         <asp:TextBox ID="TextBox3" placeholder="Nhập thông tin tìm kiếm" runat="server"></asp:TextBox>
                         <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Tìm kiếm" />
                                 <br />

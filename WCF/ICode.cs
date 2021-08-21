@@ -22,6 +22,24 @@ namespace WCF
         // tìm nhân viên theo mã
         [OperationContract]
         List<TKNhanvienMA> TKNhanvienMA(string MaNV);
+        // tìm nhân viên theo mã chức vụ
+        [OperationContract]
+        List<TKNhanvienMACV> TKNhanvienMACV(string MaCV);
+        // tìm nhân viên theo tên chức vụ
+        [OperationContract]
+        List<TKNhanvienCV> TKNhanvienCV(string TenCV);
+        // tìm nhân viên theo mã phòng
+        [OperationContract]
+        List<TKNhanvienMAPB> TKNhanvienMAPB(string MaPB);
+        // tìm nhân viên theo tên phòng
+        [OperationContract]
+        List<TKNhanvienPB> TKNhanvienPB(string TenPB);
+        // tìm nhân viên theo số điện thoại
+        [OperationContract]
+        List<TKNhanvienSDT> TKNhanvienSDT(string SDT);
+        // tìm nhân viên theo lương
+        [OperationContract]
+        List<TKNhanvienLUONG> TKNhanvienLUONG(float Luong);
         // xóa nhân viên
         [OperationContract]
         bool XoaNhanvien(String MaNV);
@@ -39,6 +57,9 @@ namespace WCF
         // tìm chức vụ
         [OperationContract]
         List<TKChucvu> TKChucvu(string TenCV);
+        // tìm chức vụ theo mã
+        [OperationContract]
+        List<TKChucvuMA> TKChucvuMA(string MaCV);
         // xóa chức vụ
         [OperationContract]
         bool XoaChucvu(string MaCV);
@@ -55,7 +76,10 @@ namespace WCF
         List<HTPhongban> HTPhongban();
         // tìm phòng ban
         [OperationContract]
-        List<TKPhongban> TKPhongban(string MaPB);
+        List<TKPhongban> TKPhongban(string TenPB);
+        // tìm phòng ban theo mã
+        [OperationContract]
+        List<TKPhongbanMA> TKPhongbanMA(string MaPB);
         // xóa phòng ban
         [OperationContract]
         bool XoaPhongBan(String MaPB);
