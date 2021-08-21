@@ -33,13 +33,14 @@ namespace WCF
         {
            
             GridViewRow row = GridView1.SelectedRow;
-            this.txtma_nv.Text = HttpUtility.HtmlDecode(row.Cells[0].Text);
+            this.lb_manv.Text = HttpUtility.HtmlDecode(row.Cells[0].Text);
             this.txt_tennv.Text = HttpUtility.HtmlDecode(row.Cells[3].Text);
             this.txt_ngaysinh.Text = HttpUtility.HtmlDecode(row.Cells[4].Text);
             this.txt_sdt.Text = HttpUtility.HtmlDecode(row.Cells[5].Text);
             this.txt_luong.Text = HttpUtility.HtmlDecode(row.Cells[6].Text);
             this.DropDownList_mapb.Text = HttpUtility.HtmlDecode(row.Cells[1].Text);
             this.DropDownList_macv.Text = HttpUtility.HtmlDecode(row.Cells[2].Text);
+            lb_nv.Text = "Mã nhân viên bạn vừa chọn là:";
         }
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -57,7 +58,10 @@ namespace WCF
 
         protected void GridView2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            GridViewRow row = GridView2.SelectedRow;
+            this.lb_macv.Text = HttpUtility.HtmlDecode(row.Cells[0].Text);        
+            this.txt_tencv.Text = HttpUtility.HtmlDecode(row.Cells[1].Text);      
+            lb_cv.Text = "Mã chức vụ bạn vừa chọn là:";
         }
 
         protected void GridView2_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -130,7 +134,10 @@ namespace WCF
 
         protected void GridView3_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            GridViewRow row = GridView3.SelectedRow;
+            this.lb_mapb.Text = HttpUtility.HtmlDecode(row.Cells[0].Text);
+            this.txt_tenpb.Text = HttpUtility.HtmlDecode(row.Cells[1].Text);
+            lb_pb.Text = "Mã phòng ban bạn vừa chọn là:";
         }
 
         protected void GridView3_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -191,19 +198,57 @@ namespace WCF
             else 
             {
                
-                Response.Write("<script> alert ('Mã đã tồn tại!'); </script>");
+                Response.Write("<script> alert ('Mã nhân viên đã tồn tại!'); </script>");
                 hienthi();
             }
         }
 
         protected void Button6_Click(object sender, EventArgs e)
-        {
-            
+        {           
+            if (txt_macv.Text == "")
+            {
+                Response.Write("<script> alert ('Vui lòng nhập mã chức vụ!'); </script>");
+                hienthi();
+            }
+            else if (txt_tencv.Text == "")
+            {
+                Response.Write("<script> alert ('Vui lòng nhập tên chức vụ!'); </script>");
+                hienthi();
+            }          
+            else if (cd.Themchucvu(txt_macv.Text, txt_tencv.Text))
+            {
+                Response.Write("<script> alert ('Thêm chức vụ thành công!'); window.location ='default.aspx' </script>");
+            }
+            else
+            {
+
+                Response.Write("<script> alert ('Mã chức vụ đã tồn tại!'); </script>");
+                hienthi();
+            }
         }
 
         protected void Button8_Click(object sender, EventArgs e)
         {
+            if (txt_mapb.Text == "")
+            {
+                Response.Write("<script> alert ('Vui lòng nhập mã phòng ban!'); </script>");
+                hienthi();
+            }
+            else if (txt_tenpb.Text == "")
+            {
+                Response.Write("<script> alert ('Vui lòng nhập tên phòng ban!'); </script>");
+                hienthi();
+            }
+            else if (cd.Themphongban(txt_mapb.Text, txt_tenpb.Text))
+            {
+                Response.Write("<script> alert ('Thêm phòng ban thành công!'); window.location ='default.aspx' </script>");
+            }
+            else
+            {
 
+                Response.Write("<script> alert ('Mã phòng ban đã tồn tại!'); </script>");
+                hienthi();
+            }
         }
     }
 }

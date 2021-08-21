@@ -53,6 +53,8 @@
                         <asp:TextBox ID="TextBox1"  placeholder="Nhập thông tin tìm kiếm" runat="server"></asp:TextBox>
                         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Tìm kiếm" />
                                 <br />
+                        <asp:Label ID="lb_nv" runat="server"></asp:Label>
+                        <asp:Label ID="lb_manv" runat="server"></asp:Label>
                         <br />
                         <asp:TextBox ID="txtma_nv" placeholder="Nhập mã" runat="server"></asp:TextBox>
                                 <br />
@@ -97,6 +99,8 @@
                         <asp:TextBox ID="TextBox2" placeholder="Nhập thông tin tìm kiếm" runat="server"></asp:TextBox>
                         <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Tìm kiếm" />
                                 <br />
+                        <asp:Label ID="lb_cv" runat="server"></asp:Label>
+                        <asp:Label ID="lb_macv" runat="server"></asp:Label>
                         <br />
                         <asp:TextBox ID="txt_macv" placeholder="Nhập mã" runat="server"></asp:TextBox>
                                 <br />
@@ -121,6 +125,8 @@
                         <asp:TextBox ID="TextBox3" placeholder="Nhập thông tin tìm kiếm" runat="server"></asp:TextBox>
                         <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Tìm kiếm" />
                                 <br />
+                        <asp:Label ID="lb_pb" runat="server"></asp:Label>
+                        <asp:Label ID="lb_mapb" runat="server"></asp:Label>
                         <br />
                         <asp:TextBox ID="txt_mapb" placeholder="Nhập mã" runat="server"></asp:TextBox>
                                 <br />
