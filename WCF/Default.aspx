@@ -56,15 +56,15 @@
                         <asp:Label ID="lb_nv" runat="server"></asp:Label>
                         <asp:Label ID="lb_manv" runat="server"></asp:Label>
                         <br />
-                        <asp:TextBox ID="txtma_nv" placeholder="Nhập mã" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtma_nv" title="Bao gồm chữ và số độ dài tối đa 10 ký tự" placeholder="Nhập mã" runat="server"></asp:TextBox>
                                 <br />
-                        <asp:TextBox ID="txt_tennv"  placeholder="Nhập tên" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_tennv" title="Bao gồm họ và tên độ dài tối đa 50 ký tự" placeholder="Nhập tên" runat="server"></asp:TextBox>
                                 <br />
-                        <asp:TextBox ID="txt_ngaysinh" placeholder="Nhập ngày sinh" runat="server" TextMode="DateTime"></asp:TextBox>
+                        <asp:TextBox ID="txt_ngaysinh" title="Có định dạng dd//mm/yyyy" placeholder="Nhập ngày sinh" runat="server" TextMode="DateTime"></asp:TextBox>
                                 <br />
                         <asp:TextBox ID="txt_sdt" pattern="0([0-9]{9}||[0-9]{10})" title="Số điện thoại có định dạng 0123456789 hoặc 02943853733" placeholder="Nhập số điện thoại" runat="server"></asp:TextBox>
                                 <br />
-                        <asp:TextBox ID="txt_luong" placeholder="Nhập lương" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_luong" title="Gồm các chữ số" placeholder="Nhập lương" runat="server" TextMode="Number"></asp:TextBox>
                                 <br />
                         <asp:DropDownList ID="DropDownList_mapb" runat="server" Width="165px" DataSourceID="SqlDataSource1" DataTextField="TenPB" DataValueField="MaPB">
                             <asp:ListItem Value="0">Chọn phòng ban</asp:ListItem>
@@ -102,9 +102,9 @@
                         <asp:Label ID="lb_cv" runat="server"></asp:Label>
                         <asp:Label ID="lb_macv" runat="server"></asp:Label>
                         <br />
-                        <asp:TextBox ID="txt_macv" placeholder="Nhập mã" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_macv" title="Bao gồm chữ và số chứa tối đa 10 ký tự" placeholder="Nhập mã" runat="server"></asp:TextBox>
                                 <br />
-                        <asp:TextBox ID="txt_tencv" placeholder="Nhập tên" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_tencv" title="Chứa tối đa 50 ký tự" placeholder="Nhập tên" runat="server"></asp:TextBox>
                                 <br />
                         <asp:Button ID="Button6" runat="server" Text="Thêm chức vụ" OnClick="Button6_Click" />
                                 <asp:Button ID="Button7" runat="server" Text="Sửa chức vụ" OnClick="Button7_Click" />&nbsp;<hr />
@@ -128,9 +128,9 @@
                         <asp:Label ID="lb_pb" runat="server"></asp:Label>
                         <asp:Label ID="lb_mapb" runat="server"></asp:Label>
                         <br />
-                        <asp:TextBox ID="txt_mapb" placeholder="Nhập mã" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_mapb" title="Bao gồm chữ và số chứa tối đa 10 ký tự" placeholder="Nhập mã" runat="server"></asp:TextBox>
                                 <br />
-                        <asp:TextBox ID="txt_tenpb" placeholder="Nhập tên" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_tenpb" title="Chứa tối đa 50 ký tự" placeholder="Nhập tên" runat="server"></asp:TextBox>
                                 <br />
                         <asp:Button ID="Button8" runat="server" Text="Thêm phòng ban" OnClick="Button8_Click" />
                                 <asp:Button ID="Button9" runat="server" Text="Sửa phòng ban" OnClick="Button9_Click" />

@@ -302,7 +302,7 @@ namespace WCF
 
         protected void Button7_Click(object sender, EventArgs e)
         {
-            if (txt_macv.Text == "")
+            if (lb_macv.Text == "")
             {
                 Response.Write("<script> alert ('Vui lòng chọn chức vụ muốn sửa!'); </script>");
                 hienthi();
@@ -312,7 +312,7 @@ namespace WCF
                 Response.Write("<script> alert ('Vui lòng nhập tên chức vụ!'); </script>");
                 hienthi();
             }
-            else if (cd.Suachucvu(txt_macv.Text, txt_tencv.Text))
+            else if (cd.Suachucvu(lb_macv.Text, txt_tencv.Text))
             {
                 Response.Write("<script> alert ('Sửa chức vụ thành công!'); window.location ='default.aspx' </script>");
             }
@@ -326,7 +326,7 @@ namespace WCF
 
         protected void Button9_Click(object sender, EventArgs e)
         {
-            if (txt_mapb.Text == "")
+            if (lb_mapb.Text == "")
             {
                 Response.Write("<script> alert ('Vui lòng chọn phòng ban muốn sửa!'); </script>");
                 hienthi();
@@ -336,7 +336,7 @@ namespace WCF
                 Response.Write("<script> alert ('Vui lòng nhập tên phòng ban!'); </script>");
                 hienthi();
             }
-            else if (cd.Suaphongban(txt_mapb.Text, txt_tenpb.Text))
+            else if (cd.Suaphongban(lb_mapb.Text, txt_tenpb.Text))
             {
                 Response.Write("<script> alert ('Sửa phòng ban thành công!'); window.location ='default.aspx' </script>");
             }
