@@ -16,11 +16,11 @@
             width: 421px;
         }
         .auto-style4 {
-            height: 373px;
+            height: 372px;
         }
         .auto-style5 {
             width: 421px;
-            height: 373px;
+            height: 372px;
         }
         </style>
 </head>
@@ -37,7 +37,7 @@
                                 <asp:BoundField DataField="MaPB" HeaderText="Mã phòng ban" />
                                 <asp:BoundField DataField="MaCV" HeaderText="Mã chức vụ" />
                                 <asp:BoundField DataField="TenNV" HeaderText="Tên nhân viên" />
-                                <asp:BoundField DataField="NgaySinh" HeaderText="Ngày sinh" />
+                                <asp:BoundField DataField="NgaySinh" HeaderText="Ngày sinh" DataFormatString="{0:MM/dd/yyyy}" />
                                 <asp:BoundField DataField="SDT" HeaderText="Số điện thoại" />
                                 <asp:BoundField DataField="Luong" HeaderText="Lương" />
                                 <asp:BoundField DataField="TenPB" HeaderText="Phòng ban" />
@@ -64,7 +64,7 @@
                                 <br />
                         <asp:TextBox ID="txt_tennv" title="Bao gồm họ và tên độ dài tối đa 50 ký tự" placeholder="Nhập tên" runat="server"></asp:TextBox>
                                 <br />
-                        <asp:TextBox ID="txt_ngaysinh" title="Có định dạng dd//mm/yyyy" placeholder="Nhập ngày sinh" runat="server" TextMode="DateTime"></asp:TextBox>
+                        <asp:TextBox ID="txt_ngaysinh" pattern = "^(((0[13-9]|1[012])[-/]?(0[1-9]|[12][0-9]|30)|(0[13578]|1[02])[-/]?31|02[-/]?(0[1-9]|1[0-9]|2[0-8]))[-/]?[0-9]{4}|02[-/]?29[-/]?([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00))$" title="Có định dạng mm//dd/yyyy" placeholder="Nhập ngày sinh" runat="server" TextMode="DateTime"></asp:TextBox>
                                 <br />
                         <asp:TextBox ID="txt_sdt" pattern="0([0-9]{9}||[0-9]{10})" title="Số điện thoại có định dạng 0123456789 hoặc 02943853733" placeholder="Nhập số điện thoại" runat="server"></asp:TextBox>
                                 <br />
@@ -85,6 +85,7 @@
                         <hr />
                         </td>
                 </tr>
+                
                 <tr>
                     <td>
                         <div class="auto-style2">

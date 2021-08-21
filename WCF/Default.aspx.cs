@@ -179,7 +179,7 @@ namespace WCF
             {
                 Response.Write("<script> alert ('Vui lòng nhập ngày sinh nhân viên!'); </script>");
                 hienthi();
-            }
+            }        
             else if (txt_sdt.Text == "")
             {
                 Response.Write("<script> alert ('Vui lòng nhập số điện thoại nhân viên!'); </script>");
