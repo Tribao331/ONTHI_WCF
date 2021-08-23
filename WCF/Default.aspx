@@ -65,21 +65,21 @@
                             <asp:ListItem Value="6">Tìm số điện thoại</asp:ListItem>
                             <asp:ListItem Value="7">Tìm theo mức lương</asp:ListItem>
                         </asp:DropDownList>
-                        <asp:TextBox ID="TextBox1"  placeholder="Nhập thông tin tìm kiếm" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBox1" MaxLength ="50" placeholder="Nhập thông tin tìm kiếm" runat="server"></asp:TextBox>
                         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Tìm kiếm" />
                                 <br />
                         <asp:Label ID="lb_nv" runat="server"></asp:Label>
                         <asp:Label ID="lb_manv" runat="server"></asp:Label>
                         <br />
-                        <asp:TextBox ID="txtma_nv" title="Bao gồm chữ và số độ dài tối đa 10 ký tự" placeholder="Nhập mã" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtma_nv" MaxLength ="10" title="Bao gồm chữ và số độ dài tối đa 10 ký tự" placeholder="Nhập mã" runat="server"></asp:TextBox>
                                 <br />
-                        <asp:TextBox ID="txt_tennv" title="Bao gồm họ và tên độ dài tối đa 50 ký tự" placeholder="Nhập tên" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_tennv" MaxLength ="50" title="Bao gồm họ và tên độ dài tối đa 50 ký tự" placeholder="Nhập tên" runat="server"></asp:TextBox>
                                 <br />
-                        <asp:TextBox ID="txt_ngaysinh" pattern = "^(((0[13-9]|1[012])[-/]?(0[1-9]|[12][0-9]|30)|(0[13578]|1[02])[-/]?31|02[-/]?(0[1-9]|1[0-9]|2[0-8]))[-/]?[0-9]{4}|02[-/]?29[-/]?([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00))$" title="Có định dạng mm//dd/yyyy" placeholder="Nhập ngày sinh" runat="server" TextMode="DateTime"></asp:TextBox>
+                        <asp:TextBox ID="txt_ngaysinh" MaxLength ="10" pattern = "^(((0[13-9]|1[012])[-/]?(0[1-9]|[12][0-9]|30)|(0[13578]|1[02])[-/]?31|02[-/]?(0[1-9]|1[0-9]|2[0-8]))[-/]?[0-9]{4}|02[-/]?29[-/]?([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00))$" title="Có định dạng mm//dd/yyyy" placeholder="Nhập ngày sinh" runat="server" TextMode="DateTime"></asp:TextBox>
                                 <br />
-                        <asp:TextBox ID="txt_sdt" pattern="0([0-9]{9}||[0-9]{10})" title="Số điện thoại có định dạng 0123456789 hoặc 02943853733" placeholder="Nhập số điện thoại" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_sdt" MaxLength ="10" pattern="0([0-9]{9}||[0-9]{10})" title="Số điện thoại có định dạng 0123456789 hoặc 02943853733" placeholder="Nhập số điện thoại" runat="server"></asp:TextBox>
                                 <br />
-                        <asp:TextBox ID="txt_luong" title="Gồm các chữ số" placeholder="Nhập lương" runat="server" TextMode="Number"></asp:TextBox>
+                        <asp:TextBox ID="txt_luong" min ="500" MaxLength ="1000000000" title="Gồm các chữ số" placeholder="Nhập lương" runat="server" TextMode="Number"></asp:TextBox>
                                 <br />
                         <asp:DropDownList ID="DropDownList_mapb" runat="server" Width="165px" DataSourceID="SqlDataSource1" DataTextField="TenPB" DataValueField="MaPB">
                             <asp:ListItem Value="0">Chọn phòng ban</asp:ListItem>
@@ -122,9 +122,9 @@
                         <asp:Label ID="lb_cv" runat="server"></asp:Label>
                         <asp:Label ID="lb_macv" runat="server"></asp:Label>
                         <br />
-                        <asp:TextBox ID="txt_macv" title="Bao gồm chữ và số chứa tối đa 10 ký tự" placeholder="Nhập mã" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_macv" MaxLength ="10" title="Bao gồm chữ và số chứa tối đa 10 ký tự" placeholder="Nhập mã" runat="server"></asp:TextBox>
                                 <br />
-                        <asp:TextBox ID="txt_tencv" title="Chứa tối đa 50 ký tự" placeholder="Nhập tên" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_tencv" MaxLength ="50" title="Chứa tối đa 50 ký tự" placeholder="Nhập tên" runat="server"></asp:TextBox>
                                 <br />
                         <asp:Button ID="Button6" runat="server" Text="Thêm chức vụ" OnClick="Button6_Click" />
                                 <asp:Button ID="Button7" runat="server" Text="Sửa chức vụ" OnClick="Button7_Click" />&nbsp;<hr />
@@ -152,9 +152,9 @@
                         <asp:Label ID="lb_pb" runat="server"></asp:Label>
                         <asp:Label ID="lb_mapb" runat="server"></asp:Label>
                         <br />
-                        <asp:TextBox ID="txt_mapb" title="Bao gồm chữ và số chứa tối đa 10 ký tự" placeholder="Nhập mã" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_mapb" MaxLength ="10" title="Bao gồm chữ và số chứa tối đa 10 ký tự" placeholder="Nhập mã" runat="server"></asp:TextBox>
                                 <br />
-                        <asp:TextBox ID="txt_tenpb" title="Chứa tối đa 50 ký tự" placeholder="Nhập tên" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_tenpb" MaxLength ="10" title="Chứa tối đa 50 ký tự" placeholder="Nhập tên" runat="server"></asp:TextBox>
                                 <br />
                         <asp:Button ID="Button8" runat="server" Text="Thêm phòng ban" OnClick="Button8_Click" />
                                 <asp:Button ID="Button9" runat="server" Text="Sửa phòng ban" OnClick="Button9_Click" />
