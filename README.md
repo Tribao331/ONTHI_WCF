@@ -1,2 +1,2 @@
-# ONTHI_WCF
-# THUC HIEN CAC CAU LENH TRUY VAN CO BAN
+# Ôn thi WCF
+# Thực hiện các câu lệnh truy vấn cơ bản
